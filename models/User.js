@@ -21,6 +21,11 @@ const UserSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, 'Please provide username'],
+    validate: {
+      validator: validator.isEmail,
+      message: 'Please provide a valid email',
+    },
+    unique: true,
     minlength: 3,
     maxlength: 20,
     trim: true,
@@ -39,25 +44,27 @@ const UserSchema = new mongoose.Schema({
   },
   month: {
     type: String,
-    enum: ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'],
+    enum: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    default: '--',
     required: [true, 'Please provide month'],
   },
   day: {
     type: Number,
     required: [true, 'Please provide day'],
     minlength: 2,
-    maxlength: 2
+    maxlength: 2,
   },
   year: {
     type: Number,
     required: [true, 'Please provide year'],
     minlength: 4,
-    maxlength: 4
+    maxlength: 4, 
   },
   gender: {
     type: String,
     required: [true, 'Please provide gender'],
-    enum: ['male', 'female']
+    enum: ['Male', 'Female'],
+    default: '--'
   },
   location: {
     type: String,

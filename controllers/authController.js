@@ -6,14 +6,14 @@ const attachCookie = require('../utils/attachCookie.js');
 const register = async (req, res) => {
   const { firstName, lastName, username, password, phoneNo, month, day, year, gender } = req.body;
 
-  if (!firstName || !lastName || !username || !password || !phoneNo || !month || !day || !year || !gender) {
+  if (!firstName || !lastName || !username || !password || !phoneNo || !day || !year || !gender) {
     throw new BadRequestError('please provide all values');
   }
   const userAlreadyExists = await User.findOne({ username });
   if (userAlreadyExists) {
     throw new BadRequestError('Email already in use');
   }
-  const user = await User.create({ firstName, lastName, username, password, phoneNo, month, day, year, gender });
+  const user = await User.create({ firstName, lastName, username, password, phoneNo, day, year, gender });
 
   const token = user.createJWT();
   attachCookie({ res, token });
@@ -24,7 +24,6 @@ const register = async (req, res) => {
         username: user.username, 
         password: user.password, 
         phoneNo: user.phoneNo, 
-        month: user.month, 
         day: user.day, 
         year: user.year, 
         gender: user.gender 
