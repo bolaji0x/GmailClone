@@ -37,33 +37,34 @@ const UserSchema = new mongoose.Schema({
     select: false,
   },
   phoneNo: {
-    type: String,
+    type: Number,
     required: [true, 'Please provide phone number'],
     maxlength: 14,
     minlength: 14
   },
   month: {
     type: String,
-    enum: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    enum: ['--', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     default: '--',
     required: [true, 'Please provide month'],
   },
   day: {
-    type: Number,
-    required: [true, 'Please provide day'],
-    minlength: 2,
-    maxlength: 2,
+    type: String,
+    required: [true, 'Please provide valid day'],
+    enum: ['--', '01', '02', '03', '04', '05', '06', '07'],
+    default: '--', 
   },
   year: {
-    type: Number,
-    required: [true, 'Please provide year'],
-    minlength: 4,
-    maxlength: 4, 
-  },
+    type: String,
+    enum: ['--', '1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014'],
+    required: [true, 'Please provide a valid year'],
+    default: '--',
+  
+  }, 
   gender: {
     type: String,
     required: [true, 'Please provide gender'],
-    enum: ['Male', 'Female'],
+    enum: ['--', 'Male', 'Female'],
     default: '--'
   },
   location: {

@@ -14,9 +14,22 @@
   --primary-50: #0095F6;
   --primary-100: #1a73e8;
   --primary-200: #75c8ff;
+  --primary-250: #f6f8fc;
+  --primary-300: #c2e7ff;
+  --primary-350: #d3e3fd;
+  --primary-400: #041e49;
+  --primary-500: #f9dedc;
+  --primary-550: #43100d;
+  --primary-600: #c4eed0;
+  --primary-650: #11311b;
+  --primary-700: #fff0d1;
+  --primary-750: #1f1f1f;
+  
+
   /* other colros */
   ---black: #222;
   --red: #d93025;
+  --red-light: #fce8e7;
   --green-dark: #0f5132;
   --white: #fff;
   --text-color: #202124;
@@ -32,6 +45,7 @@
   --thicker-font: 600;
 
   --borderRadius: .3rem;
+  --transition: .3 ease-in-out all;
   
 }
 
@@ -48,10 +62,23 @@ h1, h2, h3, p, img {
   padding: 0;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .bd-grid {
   column-gap: 1rem;
 }
-.logo {
+.google-logo{
   width: 70px;
   height: auto;
   margin-bottom: .3rem;
@@ -237,13 +264,370 @@ select:focus {
   transition: .3s;
 }
 
-
-
 .select-flex {
   display: flex;
   justify-content: space-between;
 }
 
+
+
+/* ===== Navbar ==== */
+
+.homepage-container {
+  
+  background-color: var(--primary-250);
+}
+
+nav {
+  height: 50px;
+}
+
+.navbar-container {
+ max-width: 1350px;
+ width: calc(100% - 2rem);
+ margin-left: 1rem;
+ margin-right: 1rem;
+ margin-bottom: .5rem;
+
+}
+
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-tog-btn {
+  font-size: 1.4rem;
+}
+
+.lnh-flex {
+  display: flex;
+  align-items: center;
+}
+
+.gmail-logo {
+  width: 25px;
+  display: block;
+  margin-left: .75rem;
+}
+
+.lnh-text {
+  font-size: 1.2rem;
+  margin-left: .75rem;
+  color: var(--text-color);
+  font-weight: var(--thick-font);
+}
+
+.nav-search {
+  border: none;
+  border-radius: .75rem;
+  max-width: 500px;
+  width: 100%;
+  padding: .75rem 1.5rem;
+  outline: none;
+  font-size: 1rem;
+  margin-top: .3rem;
+  visibility: hidden;
+  background-color: var(--border-color);
+}
+
+.rnh-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rnh-btn {
+  margin-right: 1rem;
+  font-size: 1.4rem;
+}
+
+.rnh-name {
+  background-color: #cc603f;
+  color: var(--white);
+  width: 35px;
+  font-size: 1.5rem;
+  font-weight: var(--thick-font);
+  height: 35px;
+  border-radius: 100%;
+}
+
+
+/* ======= === Sidebar ========  */
+
+.sidebar-container {
+  position: fixed;
+  z-index: 1;
+  top: 3rem;
+  height: 100vh;
+  width: 260px;
+  left: -100%;
+  background-color: var(--primary-250);
+  padding: .75rem 1rem;
+  box-shadow: 3px 0 0px -2px rgba(173, 173, 173, 0.5);
+  border-top-right-radius: var(--borderRadius);
+  border-bottom-right-radius: var(--borderRadius);
+  transition: all .5s;
+}
+
+
+.show-sidebar {
+  left: 0;
+}
+
+.aside-content {
+  position: absolute;
+  left: 0;
+  width: 95%;
+  boder: 1px solid green;
+  margin: 0;
+  padding: 0;
+}
+
+.comp-cont {
+  display: flex;
+  padding: .75rem 0;
+  background: var(--primary-300);
+  width: 130px;
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  justify-content: center;
+}
+
+.sidebar-title {
+  visibility: hidden;
+}
+
+.ecb-name {
+  font-size: .8rem;
+  font-weight: var(--thicker-font);
+  margin-left: 1rem;
+}
+.comp-btn {
+  font-size: 1.5rem;
+  border: none;
+}
+
+.each-nmbtn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  
+}
+.nav-btn {
+  
+  font-size: 1.2rem;
+}
+.inbox-bar {
+  display: flex;
+  align-items: center;
+  backgroun-color: var(--primary-350);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: .2rem .75rem;
+  margin-bottom: .5rem;
+}
+.inbox-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.inbox-bar-active {
+  background-color: var(--primary-350);
+}
+.each-bar {
+  border-radius: 1rem;
+  padding: .3rem .75rem;
+  display: flex;
+  margin-bottom: .5rem;
+  boder: 1px solid green;
+}
+
+.each-name {
+  font-size: .75rem;
+  margin-left: 1.2rem;
+}
+
+/*======= Inboxes ========= */
+.inbox-container {
+  background-color: white;
+  border-radius: .75rem;
+  borer: 1px solid green;
+  max-width: 1250px;
+  width: calc(100% - 1rem);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  
+  height: 90vh;
+  
+}
+
+.ei-head-flex {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ei-flex {
+  position: relative;
+  display: flex;
+  margin-right: 2rem;
+}
+
+.ei-flex::after {
+  position: absolute;
+  content: "";
+  top: 2.4rem;
+  height: .18rem;
+  width: 100%;
+  background-color: var(--primary-100);
+  left: 0;
+  border-top-right-radius: var(--borderRadius);
+}
+
+
+.ei-btn {
+  color: var(--primary-100);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.ei-name {
+  font-size: .9rem;
+}
+
+.ei-hover {
+  font-wight: var(--thicker-font);
+  clor: var(--primary-100)
+}
+
+
+.inbox-content {
+  idth: 100%;
+  pading: 1rem 2rem;
+}
+
+.inbox-modal {
+  margin: 1rem .75rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  visibility: visible;
+}
+
+.inb-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.inb-btn {
+  font-size: 1.2rem;
+}
+
+.inb-name {
+  font-size: 1rem;
+  font-weight: var(--thicker-font);
+}
+
+
+
+.gs-content {
+  display: grid; 
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+
+
+.gs-flex {
+  display: flex;
+  bordr: 1px solid green;
+}
+
+.gs-btn {
+  font-size: 1.5rem;
+}
+
+.each-gsbtn {
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-right: 1.5rem;
+  
+}
+
+.set-btn {
+  color: var(--primary-400);
+  background-color: var(--primary-350);
+}
+
+.user-btn {
+  color: var(--primary-550);
+  background-color: var(--primary-500);
+  
+}
+
+.add-btn {
+  color: var(--primary-650);
+  background-color: var(--primary-600);
+}
+
+.phone-btn {
+  color: var(--primary-750);
+  background-color: var(--primary-700);
+}
+
+
+/* ========Chats ======= */
+
+.chats-container {
+  display: flex;
+  align-iems: center;
+  justify-content: space-between;
+  background-color: var(--primary-250);
+  boder: 1px solid black;
+  border-bottom: 1px solid var(--border-color);
+  heiht: 30px;
+  width: 100%;
+  padding: .3rem 1rem;
+}
+
+.rsc-flex {
+  display: flex;
+}
+
+.rsc-check {
+  position: absolute;
+  visibilty: hidden;
+}
+
+.rsc-star {
+  color: var(--border-color);
+  font-size: 1rem;
+  margin-left: .5rem;
+}
+
+.rsc-name {
+  font-size: .8rem;
+  margin-left: .3rem;
+  color: var(--text-color);
+}
+
+.rsc-msg {
+  margin: 0 1.5rem;
+  backgrund-color: blue;
+  
+}
+
+.rsm-flex {
+  display: flex;
+}
 
 
 @media screen and (min-width: 768px) {
@@ -269,6 +653,26 @@ select:focus {
     font-weight: var(--thicker-font);
   }
   
+  .nav-search {
+    visibility: visible;
+    idth: 50px;
+    pading: 0;
+  }
+
+  .gs-content {
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr 1fr;
+  }
+
+  .ei-flex {
+    display: flex;
+    margin-right: 15rem;
+  }
+
+  .ei-flex::after {
+    width: 200%;
+  }
+  
 }
 
 button:disabled {
@@ -276,9 +680,67 @@ button:disabled {
 }
 
 @media screen and (min-width: 500px) {
-  .bd-container {
+  .bd-container,
+  .navbar-container,
+  .inbox-container {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-color: red;
+  }
+
+  .homepage-container {
+    
+    background-color: var(--white);
+  }
+
+  /* ====== Sidebar ===== */
+
+  .sidebar-container {
+    top: 0;
+    width: 85%;
+    background-color: var(--white);
+  }
+
+  .comp-cont {
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+  }
+
+  .sidebar-title {
+    font-weight: var(--thick-font);
+    color: var(--red);
+    visibility: visible;
+  }
+
+
+  /* =====  Inbox ===== */
+  .inbox-modal {
+    visibility: hidden;
+    position: absolute;
+  }
+ 
+
+  .inbox-bar-active {
+    background-color: var(--red-light);
+  }
+  
+
+  /* ==== Chats ===== */
+  .chats-container {
+    background: none;
+    border: 1px solid black;
+    padding: .3rem 1rem;
+  }
+  
+  .rsc-btns, .re{
+    position: absolute;
+    visibility: hidden;
   }
 }
 

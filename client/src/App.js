@@ -4,6 +4,7 @@ import {
   Profile,
   SharedLayout,
 } from './pages/dashboard'
+import PageContainer from './components/PageContainer'
 function App() {
   return (
     <BrowserRouter>
@@ -17,11 +18,12 @@ function App() {
             }
           >
             <Route index element={<Profile />} />
-            
         </Route>
         <Route path='/signup' element={<Register />} />
         <Route path='/landing' element={<Landing />} />
+        <Route path='/test' element={<PageContainer />} />
         <Route path='*' element={<Error />} />
+        
       </Routes>
     </BrowserRouter>
   );

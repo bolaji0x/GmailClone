@@ -8,6 +8,7 @@ import {
     GET_CURRENT_USER_BEGIN,
     GET_CURRENT_USER_SUCCESS,
     HANDLE_CHANGE,
+    TOGGLE_SIDEBAR,
 } from './actions';
   
 import { initialState } from './appContext';
@@ -64,6 +65,13 @@ const reducer = (state, action) => {
         return {
           ...state,
           [action.payload.name]: action.payload.value,
+        };
+      }
+
+      if (action.type === TOGGLE_SIDEBAR) {
+        return {
+          ...state,
+          showSidebar: !state.showSidebar,
         };
       }
 

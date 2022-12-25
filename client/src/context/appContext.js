@@ -12,6 +12,7 @@ import {
     GET_CURRENT_USER_BEGIN,
     GET_CURRENT_USER_SUCCESS,
     HANDLE_CHANGE,
+    TOGGLE_SIDEBAR
 } from './actions';
 
 const initialState = {
@@ -22,6 +23,7 @@ const initialState = {
     alertType: '',
     user: null,
     userLocation: '',
+    showSidebar: false,
 };
 
 const AppContext = React.createContext();
@@ -58,7 +60,7 @@ const AppProvider = ({ children }) => {
   const clearAlert = () => {
     setTimeout(() => {
       dispatch({ type: CLEAR_ALERT });
-    }, 3000000);
+    }, 30000);
   };
 
   const setupUser = async ({ currentUser, endPoint, alertText }) => {
@@ -92,6 +94,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: HANDLE_CHANGE, payload: { name, value } });
   };
 
+  const toggleSidebar = () => {
+    dispatch({ type: TOGGLE_SIDEBAR });
+  }
+
 
   const getCurrentUser = async () => {
     dispatch({ type: GET_CURRENT_USER_BEGIN });
@@ -120,7 +126,8 @@ const AppProvider = ({ children }) => {
         displayAlert,
         setupUser,
         logoutUser,
-        handleChange
+        handleChange,
+        toggleSidebar
       }}
     >
       {children}

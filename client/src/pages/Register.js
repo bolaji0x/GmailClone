@@ -12,8 +12,10 @@ const initialState = {
   username: '', 
   password: '', 
   phoneNo: '', 
-  day: '', 
-  year: '',
+  day: '--',
+  dayOptions: ['--', '01', '02', '03', '04', '05', '06', '07'], 
+  year: '--',
+  yearOptions: ['--', '1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014'],
   month: '--',
   monthOptions: ['--', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'], 
   gender: '--', 
@@ -132,6 +134,7 @@ const Register = () => {
             <FormRow
               type='number'
               name='phoneNo'
+             
               value={values.phoneNo}
               handleChange={handleChange}
               labelText='Phone Number'
@@ -144,19 +147,19 @@ const Register = () => {
                 list={values.monthOptions}
                 handleChange={handleChange}
               />
-              <FormRow
-                type='number'
+              <FormRowSelect
                 name='day'
-                value={values.day}
-                handleChange={handleChange}
                 labelText='Day'
-              />
-              <FormRow
-                type='number'
-                name='year'
-                value={values.year}
+                value={values.day}
+                list={values.dayOptions}
                 handleChange={handleChange}
+              />
+              <FormRowSelect
+                name='year'
                 labelText='Year'
+                value={values.year}
+                list={values.yearOptions}
+                handleChange={handleChange}
               />
         
             </div>
