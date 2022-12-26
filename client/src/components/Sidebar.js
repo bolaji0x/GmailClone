@@ -7,7 +7,10 @@ const Sidebar = () => {
   return (
     <aside className='aside-container'>
         <div className={!showSidebar ? 'sidebar-container' : 'sidebar-container show-sidebar'}>
-            <h3 className='sidebar-title'>Gmail</h3>
+             <div className='sidebar-head'> 
+                <h3 className='sidebar-title'>Gmail</h3>
+                <h3 className='st-btn' onClick={toggleSidebar}>X</h3>
+            </div>  
             <div className='comp-cont'>
                 <button className='ecbtn'><i class='comp-btn bx bx-pencil'></i></button>
                 <h3 className='ecb-name'>Compose</h3>

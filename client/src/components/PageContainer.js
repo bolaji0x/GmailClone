@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Sidebar } from '.'
 import InboxesContainer from './InboxesContainer'
 import ChatsContainer from './ChatsContainer'
+
 const PageContainer = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const PageContainer = () => {
         <div className='inbox-container'>
           <InboxesContainer />
           <ChatsContainer />
+          
         </div>
       </div>
     </>

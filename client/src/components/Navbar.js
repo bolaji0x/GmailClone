@@ -1,7 +1,7 @@
 import React from 'react'
 import { useAppContext } from '../context/appContext'
 import {  GmailLogo } from '../components'
-
+import { AiOutlineMenu  } from "react-icons/ai";
 const Navbar = () => {
   const { toggleSidebar } = useAppContext()
   return (
@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='nav-head'>
 
           <div className='lnh-flex'>
-            <button onClick={toggleSidebar}><i className='nav-tog-btn bx bxs-grid'></i></button>
+            <button onClick={toggleSidebar}><AiOutlineMenu className='nav-tog-btn' /></button>
             <button className='gmail-btn'><GmailLogo /></button>
             <h3 className='lnh-text'>Gmail</h3>
           </div>
@@ -18,7 +18,7 @@ const Navbar = () => {
             type='search'
             name='search'
             className='nav-search'
-            placeholder='Search mail'
+            placeholder='Search in mail'
 
           />
           
