@@ -1,19 +1,27 @@
 import React from 'react'
+import { FaTimes } from 'react-icons/fa'
 import { useAppContext } from '../context/appContext'
 
 const Sidebar = () => {
-    const { toggleSidebar, showSidebar, user } = useAppContext()
+    const { toggleSidebar, showSidebar, user, toggleModal } = useAppContext()
+
+    const openInput = () => {
+        toggleModal()
+        toggleSidebar()
+    }
 
   return (
     <aside className='aside-container'>
         <div className={!showSidebar ? 'sidebar-container' : 'sidebar-container show-sidebar'}>
              <div className='sidebar-head'> 
                 <h3 className='sidebar-title'>Gmail</h3>
-                <h3 className='st-btn' onClick={toggleSidebar}>X</h3>
+                <button className='st-btn' onClick={toggleSidebar}><FaTimes /></button>
             </div>  
-            <div className='comp-cont'>
+            <div onClick={openInput} className='comp-cont'>
                 <button className='ecbtn'><i class='comp-btn bx bx-pencil'></i></button>
-                <h3 className='ecb-name'>Compose</h3>
+                <button 
+                    className='ecb-name'
+                >Compose</button>
             </div>
             
             <ul className='aside-content'>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaTimes } from 'react-icons/fa'
 
 const InboxesContainer = () => {
   return (
@@ -21,7 +22,7 @@ const InboxesContainer = () => {
         <div className='inbox-modal'>
           <div className='inb-flex'>
             <h2 className='inb-name'>Get started with Gmail</h2>
-            <button className='inb-btn'>X</button>
+            <button className='inb-btn'><FaTimes /></button>
           </div>
           <div className='gs-content'>
             <div className='gs-flex'>
@@ -42,8 +43,6 @@ const InboxesContainer = () => {
             </div>
           </div>
         </div>
-
-
       </div> 
   )
 }

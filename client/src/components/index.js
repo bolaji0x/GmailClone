@@ -6,6 +6,7 @@ import Logo from './Logo'
 import FormRowSelect from './FormRowSelect'
 import GmailLogo from './GmailLogo'
 import Sidebar from './Sidebar'
-export {Loading, Navbar, FormRow, Logo, FormRowSelect, Alert, Sidebar, GmailLogo}
+import Messages from './Messages'
+export {Loading, Navbar, FormRow, Logo, FormRowSelect, Alert, Sidebar, GmailLogo, Messages}
 
 

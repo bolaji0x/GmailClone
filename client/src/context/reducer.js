@@ -9,6 +9,7 @@ import {
     GET_CURRENT_USER_SUCCESS,
     HANDLE_CHANGE,
     TOGGLE_SIDEBAR,
+    SHOW_MODAL,
 } from './actions';
   
 import { initialState } from './appContext';
@@ -72,6 +73,13 @@ const reducer = (state, action) => {
         return {
           ...state,
           showSidebar: !state.showSidebar,
+        };
+      }
+
+      if (action.type === SHOW_MODAL) {
+        return {
+          ...state,
+          showModal: !state.showModal,
         };
       }
 

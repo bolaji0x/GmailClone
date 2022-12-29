@@ -12,7 +12,8 @@ import {
     GET_CURRENT_USER_BEGIN,
     GET_CURRENT_USER_SUCCESS,
     HANDLE_CHANGE,
-    TOGGLE_SIDEBAR
+    TOGGLE_SIDEBAR,
+    SHOW_MODAL
 } from './actions';
 
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
     user: null,
     userLocation: '',
     showSidebar: false,
+    showModal: false,
 };
 
 const AppContext = React.createContext();
@@ -98,6 +100,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: TOGGLE_SIDEBAR });
   }
 
+  const toggleModal = () => {
+    dispatch({ type: SHOW_MODAL });
+  }
+
 
   const getCurrentUser = async () => {
     dispatch({ type: GET_CURRENT_USER_BEGIN });
@@ -127,7 +133,8 @@ const AppProvider = ({ children }) => {
         setupUser,
         logoutUser,
         handleChange,
-        toggleSidebar
+        toggleSidebar,
+        toggleModal
       }}
     >
       {children}

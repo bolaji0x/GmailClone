@@ -1,9 +1,10 @@
 import { Outlet } from 'react-router-dom'
-import { Navbar } from '../../components'
+import { Navbar, Sidebar } from '../../components'
 const SharedLayout = () => {
   return (
-    <div>
+    <div className='homepage-container'>
         <Navbar />
+        <Sidebar />
         <div className='dashboard-page'>
           <Outlet />
         </div>

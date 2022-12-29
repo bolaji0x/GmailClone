@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Chat = () => {
+
   return (
     <>
         <div className='chats-container'>
@@ -22,8 +25,14 @@ const Chat = () => {
                 <div>
                     <p className='rsc-name'>11:28 pm</p>
                 </div>
+
+                <Link to='/add' className='chats-btm'>
+                    <button type='button' className=''><i class='cb-btn bx bx-pencil'></i></button>
+                    <button type='button' className='cb-name'>Compose</button>
+                </Link>
                 
         </div>  
+
         
     </>
   )

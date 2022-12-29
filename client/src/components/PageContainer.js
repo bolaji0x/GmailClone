@@ -2,6 +2,7 @@ import React from 'react'
 import { Navbar, Sidebar } from '.'
 import InboxesContainer from './InboxesContainer'
 import ChatsContainer from './ChatsContainer'
+import SendMessage from './SendMessage'
 
 const PageContainer = () => {
   return (
@@ -12,7 +13,7 @@ const PageContainer = () => {
         <div className='inbox-container'>
           <InboxesContainer />
           <ChatsContainer />
-          
+          <SendMessage />
         </div>
       </div>
     </>
